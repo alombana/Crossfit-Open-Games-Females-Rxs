@@ -1,0 +1,61 @@
+Proyect One - Crossfit Open games from 2021 to 2023
+
+This data is about the open exercices that participants need to achive in order to submit their results and see if they can make it to the next stage until got a place into the 40 best participants in the world that can particapte in the final.
+
+I decided to use three years of data for the last opens (2021, 2022 y 2023) in order to count with more information for the changes in the ages, weight and hight of the competitors. 
+	Good points: 
+	1. Because you have to suscribe to the crossfit games and updated your results in the plataform in order to get your position. So the mayor part of the data related to the scores is there.
+	2. The use API and not authorization was needed so it was easy to get the information from it
+	3. how the leaderboard is structurated was same for the years analyzed, only the amount of workout changes in 2022 (only 3 WOD), so the def function for creating the lists works for all of them, perfectelly.
+	4. I always could valid with the website if the information that at the end I got in the DataFrame was the same that they have there.
+
+	Negative points:
+
+	1. Basic information of the competitors as, country, weight, height, is not there, because it is not mandatory to entered at the moment of the registration
+	2. There is a lot of participans that of course is good, but at the end the json files are huge, so aorund to 15 to 20 min are needed in order to get the data for each year.
+
+	Main challenges:
+	1. Understanding all the nested information gotten from the URL in order to create a def function that help me with the years.
+	2. Applying all the knowlegde aquiried in the lessons. It is quite different when you do it yourself.
+	3. Time. I want to search for more data that help me with the missing information on the competitors basic information.
+
+
+I decided to choose this data for the following hypotesis that most people have:
+	-Is the age a factor for being in the best of the opens?
+	-Is the weight and hight a factor for being in the best of the opens?
+	-Is there a significan different between the best competitors for the analyzed opens?
+
+I decided to use three years of data for the last opens (2021, 2022 y 2023) in order to have more information for the changes in the ages, weight and hight of the competitors. 
+
+Metodology:
+For getting the data:
+1. I decided to use request URL - API because the dataframe that I founded where only for one year and it does not cound will all the information of each WOD and the competitors. 
+2. I started to created a def function that help me to create list for the information that I needed. So I was using a lot of "for .. in ..." "type()" with few pages in order to understand how nested the data was. 
+3. At the end got a several lists for each year that I concat for getting one DataFrame with all the information. In the Jupyter Notebook I have to create also a "while loop" for the pagination. To this I add the "print()" in order to control if it was really running and not stuck. Something that I did not do for the 2023 because I realized when it was running.
+
+Here the explanation of each list:
+	-rank: The position that the competitor got at the end of the open
+	-points: The sum of the posistion got for each exercise done (Therefore if you have 	lest point it means that it is better)
+	-competitors_infor= All the basic information about each competitor (country, age, weight, continent...)
+	-Exerc1,Exerc2,Exerc3,Exerc4: The excercise with the results of each participant, also with some more information as the judges name and afiliation's credentials
+
+For cleaning:
+1. I open each dataframe I decided to only got the first 1.000 following the rank for each year. Therefore I past from around 6 thousand rows to 3 thousand rows. I decided to drop the rest because at the end only 40 participants go to the games, therefore I belive that analyzing 1000 for each year give an enough range.
+
+
+
+Notes: The information was gotten throught the API. No passwords are requited for it. You can find the URL for each year in the folder named data/original_data. Have in mind that the page starts always in one. You will need to iterate between the pagination. That code could be find in the file saved in the notebooks.
+
+For more informaton about the URL-API you can inspect the website, go to Network and search by competition, there you will find the leaderboards and in Headers the Request URL.
+
+
+
+
+Data you are using (and comments, main challenges, strengths & weaknesses, etc…)
+
+Questions you want to answer (maybe divided by different topics). Each question should include a conclusion written in a markdown cell.
+
+Describe the methodology you are using, explaining the steps upi took for data cleaning, analysis, etc.
+Conclusions after your analysis.
+Further questions.
+Links to data sources and Trello.

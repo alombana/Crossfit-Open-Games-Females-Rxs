@@ -1,0 +1,7 @@
+__pycache__
+.ipynb_checkpoints
+requirements-dev.in
+requirements.in
+.env
+env_1
+.DS_Store
