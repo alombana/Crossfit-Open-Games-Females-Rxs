@@ -242,7 +242,9 @@ referencing==0.33.0
     #   jsonschema-specifications
     #   jupyter-events
 requests==2.31.0
-    # via jupyterlab-server
+    # via
+    #   -c requirements-dev.in
+    #   jupyterlab-server
 rfc3339-validator==0.1.4
     # via
     #   jsonschema
